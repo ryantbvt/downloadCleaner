@@ -1,8 +1,12 @@
-import shutil
 from datetime import date
+from time import sleep
+import shutil
 from pathlib import Path
 from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 from extensions import extension_paths
+
+# all code in one file
 
 def prevent_override(source: Path, destination_path: Path):
     '''
@@ -55,3 +59,22 @@ class MyHandler(FileSystemEventHandler):
                 destination_path = date_path(path=destination_path)
                 destination_path = prevent_override(source=child, destination_path=destination_path)
                 shutil.move(src=child, dst=destination_path)
+
+# run the actual code
+
+# set Paths
+watch_path = Path.home() / 'C:/Users/Ryan Bui/Downloads'
+destination_root = Path.home() / 'C:/Users/Ryan Bui/Downloads/sorted'
+event_handler = MyHandler(watch_path=watch_path, destination_root=destination_root)
+
+# initialize the observer
+observer = Observer()
+observer.schedule(event_handler, f'{watch_path}', recursive=True)
+observer.start()
+
+try:
+    while True:
+        sleep(60)
+except KeyboardInterrupt:
+    observer.stop()
+observer.join()

@@ -7,7 +7,7 @@ extension_paths = {
     '.ppt':     'sorted/microsoft/powerpoint',
     '.pptx':    'sorted/microsoft/powerpoint',
     '.xls':     'sorted/microsoft/excel',
-    'xlsx':     'sorted/microsoft/excel',
+    '.xlsx':     'sorted/microsoft/excel',
     # audio
     '.mp3':     'sorted/audio',
     # PDF / text
