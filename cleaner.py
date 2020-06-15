@@ -6,8 +6,8 @@ from EventHandler import MyHandler
 # run the actual code
 if __name__ == '__main__':
     # set Paths
-    watch_path = Path.home() / 'C:/Users/Ryan Bui/Downloads'
-    destination_root = Path.home() / 'C:/Users/Ryan Bui/Downloads/sorted'
+    watch_path = Path.home() / 'Downloads'
+    destination_root = Path.home() / 'Downloads/sorted'
     event_handler = MyHandler(watch_path=watch_path, destination_root=destination_root)
 
     # initialize the observer
