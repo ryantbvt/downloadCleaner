@@ -20,11 +20,21 @@ def date_path(path: str):
     year = f'{date.today().year}'
     month = f'{date.today().month:02d}'
 
-    date_path = 'path' + '/' + year + '/' + month
-    # fix this line v
-    date_path.mkdir(parents=True, exist_ok=True)
+    # path
+    date_path_month = path + '/' + year + '/' + month
+    date_path_year = path + '/' + year
 
-    return date_path
+    # checking if the path already exists or not
+    folder_year_exists = os.path.exists(date_path_year)
+    folder_month_exists = os.path.exists(date_path_month)
+
+    if not folder_year_exists:
+        os.makedirs(date_path_year)
+
+    if not folder_month_exists:
+        os.makedirs(date_path_month)
+
+    return date_path_month
 
 # iterate through the list of files
 for i in file_list:
