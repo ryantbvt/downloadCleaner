@@ -18,6 +18,7 @@ extension_paths = {
     'jpg':     'C:/Users/Ryan Bui/Downloads/sorted/img_vid/img',
     'jpeg':    'C:/Users/Ryan Bui/Downloads/sorted/img_vid/img',
     'png':     'C:/Users/Ryan Bui/Downloads/sorted/img_vid/img',
+    'PNG':     'C:/Users/Ryan Bui/Downloads/sorted/img_vid/img',
     'mp4':     'C:/Users/Ryan Bui/Downloads/sorted/img_vid/vid',
     'mpg':     'C:/Users/Ryan Bui/Downloads/sorted/img_vid/vid',
     'mpeg':    'C:/Users/Ryan Bui/Downloads/sorted/img_vid/vid',
